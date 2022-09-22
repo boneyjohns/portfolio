@@ -429,31 +429,31 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-md-4">
+          <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/img/work-5.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
+                  <img src="assets/img/work-5.png" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
-                    <h2 class="w-title">Studio Lena Mado</h2>
+                    <h2 class="w-title">Caffe Coffee Day</h2>
                     <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
+                      <span class="w-ctegory">Responsive Web Design</span> / <span class="w-date">18 Sep. 2018</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                      <a href="https://boneyjohns.github.io/responsive-cafe-coffee-day/"> <span class="bi bi-plus-circle"></span></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
-          <!-- <div class="col-md-4">
+          </div> 
+           <!-- <div class="col-md-4">
             <div class="work-box">
               <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
@@ -480,7 +480,8 @@
 
         </div>
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
+    <!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <!-- <div class="testimonials paralax-mf bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
@@ -670,8 +671,8 @@
                         </div>
                         <div class="form-group mt-3">
                           <label for="name">Mobile Number</label>
-                          <input type="text" class="form-control" name="subject" id="contact-subject" onkeyup="validateSubject()" placeholder="Mobile Number" required>
-                          <span id="subject-error"></span>
+                          <input type="text" class="form-control" name="mobile" id="contact-mobile" onkeyup="validatemobile()" placeholder="Mobile Number" required>
+                          <span id="mobile-error"></span>
                         </div>
                         <div class="form-group mt-3">
                           <label for="name">Message</label>
@@ -761,8 +762,10 @@
   <script>
     $("#submit-form").submit((e)=>{
         e.preventDefault()
+        if(validateName()&&validateEmail()&&validatemobile()&&validateMessage())
+        {
         $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbwgObZhNgIixG3AWopitatFGsJ5sOhWMRpO_Joudrb_7cHUWMaU-oRXGDLUBV-BSeuu/exec",
+            url:"https://script.google.com/macros/s/AKfycbw3HoOed9-iizXtUxe9qm4NsE2BpjuGx9xc7rGpjPqzsOsx48uuPoDSGhv_uz1lcdiv/exec",
             data:$("#submit-form").serialize(),
             method:"post",
             success:function (response){
@@ -774,7 +777,12 @@
                 alert("Something Error")
 
             }
-        })
+       
+          })
+        }
+        else{
+          alert("Enter proper details")
+        }
     })
 </script>
 <!-- Template Main JS File -->
