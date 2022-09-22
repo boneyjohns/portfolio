@@ -1,6 +1,6 @@
 var nameError = document.getElementById('name-error');
 var emailError = document.getElementById('email-error');
-var subjectError = document.getElementById('subject-error');
+var mobileError = document.getElementById('mobile-error');
 var messageError = document.getElementById('message-error');
 var submitError = document.getElementById('submit-error');
 
@@ -65,34 +65,35 @@ function validateMessage() {
     
 }
 
-function validateSubject(){
-	var phone = document.getElementById("contact-subject").value.trim();
+function validatemobile(){
+	var phone = document.getElementById("contact-mobile").value.trim();
 	if (phone.length == 0) {
-		subjectError.innerHTML = 'phone number is Required';
-		subjectError.style.color = 'red'
-		document.getElementById("contact-subject").style.borderColor = "red"
-		document.getElementById("contact-subject").style.color = "red"
+		mobileError.innerHTML = 'phone number is Required';
+		mobileError.style.color = 'red'
+		document.getElementById("contact-mobile").style.borderColor = "red"
+		document.getElementById("contact-mobile").style.color = "red"
 		return false;
 	}
 	if (phone.length != 10) {
-		subjectError.innerHTML = "Enter Valid phonenumber"
-		subjectError.style.color = "red"
-		document.getElementById("contact-subject").style.borderColor = "red"
-		document.getElementById("contact-subject").style.color = "red"
+		mobileError.innerHTML = "Enter Valid phonenumber"
+		mobileError.style.color = "red"
+		document.getElementById("contact-mobile").style.borderColor = "red"
+		document.getElementById("contact-mobile").style.color = "red"
 		return false
 
 	}
 	if (!phone.match(/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/)) {
-		subjectError.innerHTML = "Phonenumber must be digits"
-		subjectError.style.color("red")
-		document.getElementById("contact-subject").style.borderColor = "red"
-		document.getElementById("contact-subject").style.color = "red"
+		mobileError.innerHTML = "Phonenumber must be digits"
+		mobileError.style.color("red")
+		document.getElementById("contact-mobile").style.borderColor = "red"
+		document.getElementById("contact-mobile").style.color = "red"
 
 
 		return false;
     }
-    subjectError.innerHTML = ""
-	document.getElementById("contact-subject").style.borderColor = "green"
-	document.getElementById("contact-subject").style.color = "green"
-	return true;
+    document.getElementById("contact-mobile").style.borderColor = ""
+	document.getElementById("contact-mobile").style.color = ""
+    mobileError.innerHTML='Number is valid';
+    mobileError.style.color='green'
+    return true;
 }
